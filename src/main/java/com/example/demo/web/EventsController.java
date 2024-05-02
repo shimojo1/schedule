@@ -112,6 +112,7 @@ public class EventsController {
 	public String edit(@PathVariable Integer id, Model model) {
 		try {
 			model.addAttribute("event", eventService.findById(id));
+			model.addAttribute("registeredUserId", userService.getUserInfo().getId());
 		} catch (DataNotFoundException e) {
 			return "redirect:/admin";
 		}
