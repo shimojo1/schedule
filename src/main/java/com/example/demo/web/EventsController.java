@@ -56,10 +56,12 @@ public class EventsController {
 		
 		Integer year = Integer.parseInt(yearMonth.substring(0, 4));
 		Integer month = Integer.parseInt(yearMonth.substring(4, 6)) - 1;	
+		Integer currentYear = DateFormatUtil.getYear(); 
+		Integer currentMonth = DateFormatUtil.getMonth();
 		
 		model.addAttribute("weeks", week);
 		model.addAttribute("beforeMonth", DateFormatUtil.getYearMonth(year, month - 1));
-		model.addAttribute("curenntMonth", DateFormatUtil.getYearMonth(year, month));
+		model.addAttribute("curenntMonth", DateFormatUtil.getYearMonth(currentYear, currentMonth));
 		model.addAttribute("afterMonth", DateFormatUtil.getYearMonth(year, month + 1));
 		model.addAttribute("calendarBoxNum", eventService.createCalender(year, month));
 		
