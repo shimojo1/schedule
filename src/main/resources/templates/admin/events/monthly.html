@@ -9,13 +9,13 @@
       <div class="sp-free-content-container-12" style="width: 80%;margin: 50px auto;">
         <th:block>
         <!-- 当月の表示 -->
-          <div class="mb-5" style="text-align: left;">
-            <a th:href="@{/admin/{date}(date=*{beforeMonth})}"th:text="前月"></a>
-			<a th:href="@{/admin/{date}(date=*{curenntMonth})}"th:text="今月"></a>
-			<a th:href="@{/admin/{date}(date=*{afterMonth})}"th:text="翌月"></a>
-          </div>
           <!-- カレンダー -->
           <table class="table table-bordered">
+            <tr align="center">
+				<td><a th:href="@{/admin/{date}(date=*{beforeMonth})}"th:text="前月"></a></td>
+				<td colspan="5"><a th:href="@{/admin/{date}(date=*{curenntMonth})}"th:text="今月"></a></td>
+				<td><a th:href="@{/admin/{date}(date=*{afterMonth})}"th:text="翌月"></a></td>
+			</tr>
             <tr>
               <div th:each="week:${weeks}">
                 <th th:text="${week}">曜日</th>
