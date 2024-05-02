@@ -20,7 +20,7 @@ CREATE TABLE events (
   id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'イベントID',
   user_id int(11) NOT NULL COMMENT 'ユーザID',
   event_date date NOT NULL COMMENT 'イベント年月日',
-  event_allday int(1) NOT NULL COMMENT '終日イベントのフラグ',
+  event_allday int(1) COMMENT '終日イベントのフラグ',
   event_start_time time NOT NULL DEFAULT '00:00:00' COMMENT '開始時刻',
   event_end_time time NOT NULL DEFAULT '23:59:59' COMMENT '終了時刻',
   event_name varchar(255) NOT NULL COMMENT 'イベント名',

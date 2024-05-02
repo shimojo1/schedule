@@ -39,7 +39,7 @@ public class Event {
 	@NotEmpty(groups = { Create.class, Update.class }, message = "イベント年月日が未入力です")
 	private String eventDate;
 
-	@Column(nullable = false, name="event_allday")
+	@Column(nullable = true, name="event_allday")
 	private Integer eventAllday;
 
 	@Column(nullable = false, name="event_start_time")
